@@ -11,7 +11,7 @@ A cozy WebRTC video portal where Hack Clubbers can find each other by city and h
 
 ## Live site
 
-**[haven-portal.netlify.app](https://haven-portal.netlify.app)**
+**[havenconnects.netlify.app](https://havenconnects.netlify.app)**
 
 ## Stack
 
