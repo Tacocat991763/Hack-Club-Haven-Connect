@@ -1,28 +1,44 @@
 # Hack Club Haven Connect
 
-A cozy WebRTC video portal where Hack Clubbers can find each other by city and hang out face-to-face. No accounts, no servers — just a room code and a forest.
+Peer-to-peer video chat for Hack Clubbers. Share a room code, join by city. No backend.
 
-## What it does
+**Demo:** [havenconnects.netlify.app](https://havenconnects.netlify.app)
 
-- Enter your city and create a portal, or join one with a room code
-- Peer-to-peer video and audio via WebRTC (PeerJS)
-- Full mesh — everyone sees everyone, no central relay
-- Room codes are shareable; anyone with the code can join
+## Run locally
 
-## Live site
+```bash
+python3 -m http.server 8742
+# open http://localhost:8742
+```
 
-**[havenconnects.netlify.app](https://havenconnects.netlify.app)**
+Must use a server — `file://` blocks camera access and WebRTC.
 
-## Stack
+## How it works
 
-| Thing | What |
-|---|---|
-| `index.html` | The whole app — HTML, CSS, and JS in one file |
-| PeerJS 1.5.2 | WebRTC signalling + peer connections |
-| Images | Forest background + Daven the hedgehog mascot |
+- WebRTC via PeerJS 1.5.2 (free public signalling server)
+- Full mesh: every peer connects directly to every other peer
+- Host peer ID = room code. First joiner becomes host if original host leaves
+- No data leaves the browser except the WebRTC handshake through PeerJS
 
-No build step, no dependencies to install.
+## Deploy
+
+Static folder, any host works:
+
+```bash
+npx netlify-cli deploy --dir . --prod
+```
+
+## Files
+
+```
+index.html          — entire app (HTML + CSS + JS, no build step)
+images/
+  bg-forest.webp    — background
+  cloud-corner.webp — corner decoration
+  divider.webp      — top bar
+  hog-*.png         — Daven expressions (base, sleeping, winking, yawning)
+```
 
 ## Daven
 
-The hedgehog in the bottom-left corner. He blinks, winks, and yawns on his own. Leave the tab open long enough and you'll catch a yawn.
+Hedgehog mascot, bottom-left. Blinks and yawns on his own via a randomised idle loop in `index.html` near the bottom.
