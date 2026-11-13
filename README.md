@@ -25,4 +25,4 @@ No build step, no dependencies to install.
 
 ## Daven
 
-The hedgehog in the bottom-left corner. She blinks, winks, and yawns on her own. Leave the tab open long enough and you'll catch a yawn.
+The hedgehog in the bottom-left corner. He blinks, winks, and yawns on his own. Leave the tab open long enough and you'll catch a yawn.
