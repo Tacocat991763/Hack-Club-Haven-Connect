@@ -2,8 +2,6 @@
 
 A cozy WebRTC video portal where Hack Clubbers can find each other by city and hang out face-to-face. No accounts, no servers — just a room code and a forest.
 
-![Haven Connect screenshot](https://haven-portal.netlify.app)
-
 ## What it does
 
 - Enter your city and create a portal, or join one with a room code
